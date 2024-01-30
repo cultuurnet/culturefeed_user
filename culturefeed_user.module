@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Contains culturefeed_user.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function culturefeed_user_theme() {
+  $theme = [];
+
+  $theme['culturefeed_user_authenticated_page'] = [
+    'variables' => [],
+    'template' => 'culturefeed-user-authenticated-page',
+    'file' => 'includes/theme.inc',
+  ];
+
+  return $theme;
+}

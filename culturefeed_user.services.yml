@@ -1,0 +1,17 @@
+services:
+
+  culturefeed_user.current_user:
+    class: Drupal\culturefeed_user\CultureFeedCurrentUser
+    arguments: ['@culturefeed_api.user_context_manager', '@culturefeed_api.client', '@config.factory']
+
+  access_check.is_uitid_user.is_connected:
+    class: Drupal\culturefeed_user\Access\UitidUserStatusCheck
+    arguments: ['@culturefeed_user.current_user']
+    tags:
+      - { name: access_check, applies_to: _is_uitid_user }
+
+  culturefeed_user.auto_login_subscriber:
+    class: Drupal\culturefeed_user\EventSubscriber\AutoLoginSubscriber
+    arguments: ['@current_user', '@current_route_match']
+    tags:
+      - { name: event_subscriber }

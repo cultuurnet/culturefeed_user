@@ -1,0 +1,39 @@
+culturefeed_user.connect:
+  path: '/culturefeed/oauth/connect'
+  defaults:
+    _controller: '\Drupal\culturefeed_user\Controller\AuthenticationController::connect'
+    _title: 'connect'
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE
+
+culturefeed_user.register:
+  path: '/culturefeed/oauth/connect/register'
+  defaults:
+    _controller: '\Drupal\culturefeed_user\Controller\AuthenticationController::connect'
+    _title: 'connect'
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE
+
+culturefeed_user.authorize:
+  path: '/culturefeed/oauth/authorize'
+  defaults:
+    _controller: '\Drupal\culturefeed_user\Controller\AuthenticationController::authorize'
+    _title: 'authorize'
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE
+
+culturefeed_user.authenticated:
+  path: '/authenticated'
+  defaults:
+    _title: 'Log in'
+    _controller: '\Drupal\culturefeed_user\Controller\AuthenticationController::authenticated'
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE
